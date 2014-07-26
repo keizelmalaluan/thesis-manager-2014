@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Thesis Manager</title>
+  <link href="/static/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+</head>
+<body background="/static/jpeg/jp.jpg">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+ <!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="/static/js/bootstrap.min.js"></script>
+<nav class="navbar navbar-inverse" role="navigation">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand">Team 14 Module 3</a>
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Advisers<span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="/adviser/new">Create New Adviser</a></li>
+            <li><a href="/adviser/list">View All Advisers</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Students<span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="/student/new">Create New Student</a></li>
+            <li><a href="/student/list">View All Students</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Thesis<span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="/thesis/new">Create New Thesis</a></li>
+            <li><a href="/thesis/list">View All Thesis</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+<div class="page-header">
+  <h1 style="color:white">Create a New Thesis</h1>
+</div>
+<form class="form-horizontal" role="form" method="POST" action="/thesis/new">
+  <div class="form-group">
+    <label for="inputEmail3" class="col-sm-2 control-label" style="color:white">Thesis Title</label>
+    <div class="col-sm-5">
+      <input type="text" class="form-control" id="inputEmail3" placeholder="Thesis Title" name="thesis_title">
+    </div>
+  </div>
+  <div class="form-group">
+    <label style="color:white"for="inputPassword3" class="col-sm-2 control-label">Date</label>
+    <div class="col-sm-1">
+    <select class="form-control" name="thesis_date">
+  <option>2014</option>
+  <option>2013</option>
+  <option>2012</option>
+  <option>2011</option>
+  <option>2010</option>
+  <option>2009</option>
+  <option>2008</option>
+  <option>2007</option>
+  <option>2006</option>
+  <option>2005</option>
+  <option>2004</option>
+  <option>2003</option>
+  <option>2002</option>
+  <option>2001</option>
+  <option>2000</option>
+  </select>
+    </div>
+  </div>
+  <div class="form-group">
+    <label style="color:white" for="inputPassword3" class="col-sm-2 control-label">Status</label>
+    <div class="col-sm-offset-2 col-sm-10">
+      <div class="radio">
+  <label style="color:white">
+    <input type="radio" name="thesis_status" id="optionsRadios1" value="Passed" checked>
+    Passed
+  </label>
+</div>
+<div class="radio">
+  <label style="color:white">
+    <input type="radio" name="thesis_status" id="optionsRadios2" value="Failed">
+    Failed
+  </label>
+</div>
+    </div>
+  </div>
+  <div class="form-group">
+        <label style="color:white" for="inputPassword3" class="col-sm-2 control-label">Description</label>
+    <div class="col-sm-6">
+      <textarea class="form-control" rows="3" placeholder="Description" name="thesis_desc"></textarea>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button type="submit" class="btn btn-default">Submit</button>
+    </div>
+  </div>
+</form>
+</body>
+</html>
+<!--<html>
+<head>
+    <title>Create a New Thesis</title>
+    <style>
+        input{
+          font-family: Bookman Old Style;
+          font-size: 1.25em;
+        }
+        table.header, table.content{
+        text-align: center;
+        height: 20px;
+        width: 100%;
+        }
+        td.add{
+          height: 50px;
+          font-family: Bookman Old Style;
+        font-size: 1em;
+        border: 3px solid #606060;
+        background-color: #a0a0a0;
+        border-radius: 10px;
+        }
+        td.left{
+          width: 100px;
+          height: 500px;
+          font-family: Bookman Old Style;
+        font-size: 1em;
+        border: 3px solid #606060;
+        background-color: #a0a0a0;
+        border-radius: 10px;
+        }
+        tr.content, td.content{
+        font-family: Bookman Old Style;
+        font-size: 1em;
+        border: 3px solid #606060;
+        background-color: #a0a0a0;
+        border-radius: 10px;
+        }
+        tr.header, td.header{
+        font-family: Bookman Old Style;
+        font-size: 1.5em;
+        border: 3px solid #606060;
+        background-color: #a0a0a0;
+        border-radius: 10px;
+      }
+      td.bdy{
+        text-align: center;
+      }
+    </style>
+</head>
+<body background="http://cdn.theanimals.pics/pictures/www.dream-wallpaper.com/free-wallpaper/art-wallpaper/black-background-4-wallpaper/1680x1050/free-wallpaper-14.jpg">
+    <table class="header">
+      <tr class="header">
+        <td class="header">Thesis Manager</td>
+      </tr>
+    </table>
+    <table class="content">
+      <tr class="left">
+        <td class="left" rowspan="2">
+          <p>View Thesis Records</p><br>
+        </td>
+        <td class="add">Add New Title</td>
+      </tr>
+      <tr class="content">
+        <td class="bdy">
+          <form method="POST" action="/thesis/new" >
+    <div>
+        <div>
+            <input placeholder="Title" size="20" type="text" name="thesis_title"><br>
+            <span style="font-family: Arial"><strong>Date</strong></span>
+            <select name="thesis_date">
+               <option value="2014">2014</option>
+               <option value="2013">2013</option>
+               <option value="2012">2012</option>
+               <option value="2011">2011</option>
+               <option value="2010">2010</option>
+               <option value="2009">2009</option>
+               <option value="2008">2008</option>
+               <option value="2007">2007</option>
+               <option value="2006">2006</option>
+               <option value="2005">2005</option>
+               <option value="2004">2004</option>
+               <option value="2003">2003</option>
+               <option value="2002">2002</option>
+               <option value="2001">2001</option>
+               <option value="2000">2000</option>
+            </select>
+            <span style="font-family: Arial"><strong>Status</strong></span>
+            <select name="thesis_status">
+               <option value="Passed">Passed</option>
+               <option value="Failed">Failed</option>
+            </select>
+        </div>
+        <br>
+        <div>
+            <span style="font-family: Arial"><strong>Description</strong></span><br>
+            <textarea rows="20" cols="60" name="thesis_desc"></textarea>
+        </div>
+        <div>
+          <br>
+            <input style="border-radius: 5px; border:2px solid blue; font-family: Arial; font-size: 1.25em; width: 100px; background-color: #9999ff; height: 60px" type="submit" value="Submit">
+        </div>
+    </div>
+    </form>
+        </td>
+      </tr>
+    </table>
+</body>
+</html>-->
